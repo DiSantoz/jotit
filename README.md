@@ -31,16 +31,16 @@ Checkout [JotIt!](https://floating-peak-63791.herokuapp.com/)
     ![alt text](./public/assets/images/files.png)
 
 3. In terminal run `npm start` to begin server.
-4. Naviagate to `http://localhost:3001/` in order to view the website.
+4. Navigate to `http://localhost:3001/` in order to view the website.
 
 
 ## Usage 
 
-Click on `Get Started` to be taken to the note organizer :
+Click on `Get Started` to be taken to the note organizer:
 
 ![alt text](./public/assets/images/landing.png)
 
-You can add notes by click on the `+` on the top right of the page :
+You can add notes by click on the `+` on the top right of the page:
 
 ![alt text](./public/assets/images/add.png "Add any note with a simple click")
 
@@ -48,13 +48,13 @@ Click inside the text fields `Note Title` and `Note Text` and begin entering tas
 
 ![alt text](./public/assets/images/note.png)
 
-After clicking on the save icon :floppy_disk: in the top right, the note will be added to the left hand side of the page for quick access
+After clicking on the save icon :floppy_disk: in the top right, the note will be added to the left-hand side of the page for quick access
 
 ![alt text](./public/assets/images/save.png "Click on the icon to the left of the + in order to save your notes!")
 
 ![alt text](./public/assets/images/load.png "Notes are organized in order they were created")
 
-Simply click on the note title in the left hand side in order to display the note contents. Once you no longer need the note, click on the red trashcan icon :wastebasket: in order to delete notes!
+Simply click on the note title in the left-hand side in order to display the note contents. Once you no longer need the note, click on the red trashcan icon :wastebasket: in order to delete notes!
 
 ![alt text](./public/assets/images/delete.gif)
 
