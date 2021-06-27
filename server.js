@@ -31,9 +31,6 @@ app.post('/api/notes', (req, res) => {
   req.body.id = uniqid();
   const newNote = req.body;
   data.push(newNote);
-  fs.writeFileSync(
-    path.join(__dirname, './db/db.json'),
-    JSON.stringify({ data }, null, 2))
   res.json(data);
 })
 
