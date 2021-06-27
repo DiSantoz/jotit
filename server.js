@@ -2,6 +2,7 @@
 const fs = require("fs");
 const path = require('path');
 const express = require('express');
+const uniqid = require('uniqid');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const data = require('./db/db.json');
@@ -27,10 +28,13 @@ app.get('/api/notes', (req, res) => {
 
 // Post route to save new note and add to db
 app.post('/api/notes', (req, res) => {
+  req.body.id = uniqid();
   const newNote = req.body;
-  console.log(newNote);
   data.push(newNote);
-  res.json(newNote);
+  fs.writeFileSync(
+    path.join(__dirname, './db/db.json'),
+    JSON.stringify({ data }, null, 2))
+  res.json(data);
 })
 
 // Returns index HTMl file 
