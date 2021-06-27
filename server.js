@@ -13,11 +13,11 @@ app.use(express.json());
 // file path to public folder(middleware)
 app.use(express.static('public'));
 
-// Routes
+// GET and POST Routes
 
 // Route for notes HTML
 app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/notes.html'));
+  res.sendFile(path.join(__dirname, './public/notes.html'));
 });
 
 // Route for db.json file
@@ -25,13 +25,21 @@ app.get('/api/notes', (req, res) => {
   return res.json(data);
 });
 
+// Post route to save new note and add to db
+app.post('/api/notes', (req, res) => {
+  const newNote = req.body;
+  console.log(newNote);
+  data.push(newNote);
+  res.json(newNote);
+})
+
 // Returns index HTMl file 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/index.html'));
-  });
-  
+  res.sendFile(path.join(__dirname, './public/index.html'));
+});
+
+
 // Listener
 app.listen(PORT, () => {
-    console.log(`App listening on PORT ${PORT}`);
-  });
-  
+  console.log(`App listening on PORT ${PORT}`);
+});
