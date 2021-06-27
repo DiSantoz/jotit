@@ -41,16 +41,22 @@ app.post('/api/notes', (req, res) => {
   res.json(notes);
 })
 
+// Delete note 
+app.delete('/api/notes/:id', (req, res) => {
+  const noteId = (req.params.id).toString();
+  const notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'))
+  console.log(notes);
+  const removeId = notes.filter(notes => notes.id !== noteId);
+  fs.writeFileSync('./db/db.json', JSON.stringify(removeId, null, 2))
+  res.json(notes);
+
+})
+
 // Returns index HTMl file 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
-// Delete note 
-app.delete('/api/notes/:id', (req, res) => {
-  const noteId = (req.params.id).toString();
-
-})
 
 // Listener
 app.listen(PORT, () => {
